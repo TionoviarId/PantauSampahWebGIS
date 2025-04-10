@@ -1,6 +1,10 @@
+'use client'
+import { useState } from "react";
 
 
 export default function Home() {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
   return (
     <main className="font-sans text-gray-800 bg-white">
       {/* Hero Section */}
@@ -80,20 +84,29 @@ export default function Home() {
 
       {/* Map Section */}
       <section id="map" className="py-24 px-6 bg-white">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900 font-serif">Peta Persebaran TPS</h2>
-          <p className="text-gray-600">Pantau lokasi TPS dan kondisinya secara interaktif.</p>
-        </div>
-        <div className="w-full max-w-6xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-xl border">
-          <iframe
-            src="https://geoblastify.party/GIS/1/#11/-6.7986/110.8677"
-            className="w-full h-full"
-            frameBorder="0"
-            allowFullScreen
-            title="Peta"
-          ></iframe>
-        </div>
-      </section>
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold mb-4 text-gray-900 font-serif">Peta Persebaran TPS</h2>
+    <p className="text-gray-600">Pantau lokasi TPS dan kondisinya secara interaktif.</p>
+  </div>
+
+  <div className="w-full max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-xl border h-[500px] md:aspect-video relative">
+    {!iframeLoaded && (
+      <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-emerald-500 border-solid"></div>
+      </div>
+    )}
+    <iframe
+      src="https://geoblastify.party/GIS/1/#11/-6.7986/110.8677"
+      className="w-full h-full relative z-0"
+      frameBorder="0"
+      allowFullScreen
+      title="Peta"
+      onLoad={() => setIframeLoaded(true)}
+    ></iframe>
+  </div>
+</section>
+
+
 
       {/* Edukasi */}
       <section className="py-24 px-6 bg-gradient-to-b from-[#F5F7FA] to-white">
