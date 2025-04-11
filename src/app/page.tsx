@@ -96,7 +96,7 @@ export default function Home() {
       </div>
     )}
     <iframe
-      src="https://geoblastify.party/GIS/1/#11/-6.7986/110.8677"
+      src="https://geoblastify.party/GIS/#11/-6.8160/108.0121"
       className="w-full h-full relative z-0"
       frameBorder="0"
       allowFullScreen
