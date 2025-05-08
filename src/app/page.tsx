@@ -45,8 +45,8 @@ export default function Home() {
       {
         icon: "🗑️",
         title: "Total TPS Aktif",
-        value: 100,
-        desc: "TPS tersebar dan aktif di kota-kota Besar",
+        value: 43,
+        desc: "TPS tersebar dan aktif di kota Sumedang",
         color: "emerald",
       },
       {
