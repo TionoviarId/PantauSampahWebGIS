@@ -57,8 +57,8 @@ export default function Home() {
         color: "yellow",
       },
       {
-        icon: "❌",
-        title: "TPS Tidak Layak",
+        icon: "❌ ",
+        title: "TPA Tidak Layak",
         value: 1,
         desc: "TPA Kondisi rusak & overload",
         color: "red",
